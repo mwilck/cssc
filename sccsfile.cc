@@ -44,7 +44,7 @@
 #endif
 
 #ifdef CONFIG_SCCS_IDS
-static const char rcs_id[] = "CSSC $Id: sccsfile.cc,v 1.40.2.1 1999/06/26 20:58:53 james Exp $";
+static const char rcs_id[] = "CSSC $Id: sccsfile.cc,v 1.40.2.2 1999/06/27 08:14:20 james Exp $";
 #endif
 
 
@@ -68,7 +68,7 @@ sccs_file::open_sccs_file(const char *name, enum _mode mode, int *sump)
   if (f == NULL)
     {
       const char *purpose = (mode == UPDATE) ? "update" : "reading";
-      s_missing_quit("Cannot open SCCS file %s for %s.\n", name, purpose);
+      s_missing_quit("Cannot open SCCS file %s for %s", name, purpose);
       /*NOTEACHED*/
       return NULL;
     }
