@@ -44,7 +44,7 @@
 #include <stdio.h>
 
 #ifdef CONFIG_SCCS_IDS
-static const char rcs_id[] = "CSSC $Id: file.cc,v 1.26 1999/03/13 11:57:23 james Exp $";
+static const char rcs_id[] = "CSSC $Id: file.cc,v 1.26.2.1 1999/06/26 21:52:11 james Exp $";
 #endif
 
 #ifdef CONFIG_UIDS
@@ -611,13 +611,15 @@ file_lock::file_lock(mystring zname): locked(0), name(zname)
 	{
 	  return;
 	}
-      ctor_fail(errno, "%s: Can't create lock file.", zname.c_str());
+      errormsg_with_errno("%s: Can't create lock file.", zname.c_str());
+      ctor_fail(1, NULL);
     }
 
   if (do_lock(f) != 0 || fclose_failed(fclose(f)))
     {
       remove(zname.c_str());
-      ctor_fail(errno, "%s: Write error.", zname.c_str());
+      errormsg_with_errno("%s: Write error.", zname.c_str());
+      ctor_fail(1, NULL);
     }
   
   locked = 1;
