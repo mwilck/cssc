@@ -33,7 +33,7 @@
 #include "err_no.h"
 
 #ifdef CONFIG_SCCS_IDS
-static const char rcs_id[] = "CSSC $Id: run.cc,v 1.21.2.1 1999/06/26 21:13:59 james Exp $";
+static const char rcs_id[] = "CSSC $Id: run.cc,v 1.21.2.2 1999/06/26 21:26:57 james Exp $";
 #endif
 
 // According to the ANSI standard, id the argument to system()
@@ -130,8 +130,8 @@ run(const char *prg, mylist<const char *> const &args) {
 #if 0	
 	fflush(NULL);
 #else
-	ffluch(stdout);
-	ffluch(stderr);
+	fflush(stdout);
+	fflush(stderr);
 #endif	
 	pid_t pid = fork(); 
 	if (pid < 0) {
