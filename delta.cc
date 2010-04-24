@@ -24,15 +24,17 @@
  *
  */
 
-#include "cssc.h"
+#include "delta.h"
+#include "cleanup.h"
 #include "my-getopt.h"
 #include "fileiter.h"
 #include "pfile.h"
 #include "sccsfile.h"
 #include "sf-chkmr.h"
 #include "version.h"
-#include "delta.h"
 #include "except.h"
+#include "ioerr.h"
+#include "cssc.h"
 
 
 
