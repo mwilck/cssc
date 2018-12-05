@@ -39,6 +39,7 @@ public:
   NoCopyConstructor &operator =(NoCopyConstructor const &other)
   {
     value_ = other.value_;
+    return *this;
   }
 
 private:

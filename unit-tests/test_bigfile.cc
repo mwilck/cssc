@@ -58,7 +58,7 @@ emit_ixg(FILE *fp, char signifier, const mylist<sid>& items)
   return true;
 }
 
-static bool
+static void
 emit_comments_or_mrs(FILE *fp,
                      char signifier,
                      const mylist<mystring> items)
@@ -76,7 +76,7 @@ emit_comments_or_mrs(FILE *fp,
     }
 }
 
-static bool
+static void
 emit_delta(FILE *fp,
            unsigned long inserted,
            unsigned long deleted,
@@ -180,7 +180,7 @@ getpred (int *r, int *l, int *b, int *s)
 }
 
 
-static bool make_delta(FILE *fp,
+static void make_delta(FILE *fp,
                        const sccs_date& current_time,
                        const mystring& username,
                        int release, int level, int branch, int revision,
@@ -221,7 +221,7 @@ static bool make_delta(FILE *fp,
              empty_string_list, empty_string_list);
 }
 
-static bool
+static void
 create_sccs_file(FILE *fp,
                  const mystring& username,
                  int releases,
