@@ -103,6 +103,7 @@ public:
       {
 	items_.push_back(*ci);
       }
+    return *this;
   }
 
   const mylist<TYPE>& operator-=(const mylist& other)
@@ -122,6 +123,7 @@ public:
 	  }
 	items_.swap(remaining);
       }
+    return *this;
   }
 
 
