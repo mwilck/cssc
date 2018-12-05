@@ -60,7 +60,7 @@ emit_ixg(FILE *fp, char signifier, const mylist<sid>& items)
 }
 
 template <typename Container>
-static bool
+static void
 emit_comments_or_mrs(FILE *fp,
                      char signifier,
                      const Container& items)
@@ -78,7 +78,7 @@ emit_comments_or_mrs(FILE *fp,
     }
 }
 
-static bool
+static void
 emit_delta(FILE *fp,
            unsigned long inserted,
            unsigned long deleted,
@@ -182,7 +182,7 @@ getpred (int *r, int *l, int *b, int *s)
 }
 
 
-static bool make_delta(FILE *fp,
+static void make_delta(FILE *fp,
                        const sccs_date& current_time,
                        const std::string& username,
                        int release, int level, int branch, int revision,
@@ -224,7 +224,7 @@ static bool make_delta(FILE *fp,
              no_comments, no_mrs);
 }
 
-static bool
+static void
 create_sccs_file(FILE *fp,
                  const std::string& username,
                  int releases,
